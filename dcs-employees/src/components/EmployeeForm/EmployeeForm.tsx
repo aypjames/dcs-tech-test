@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { createUpdateEmployee, getEmployees } from "../../services/employees";
 import styles from "./EmployeeForm.module.scss";
 
 interface Params {
@@ -40,11 +41,11 @@ const EmployeeForm = ({ formParams }: Params) => {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (employeeDetails: Inputs) => {
-    fetch(`http://localhost:8080/${formParams.fetchUrl}`, {
-      method: formParams.crudMethod,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(employeeDetails),
-    }).then((res) => res.json());
+    createUpdateEmployee(
+      formParams.fetchUrl,
+      formParams.crudMethod,
+      employeeDetails
+    );
     alert(
       `${employeeDetails.firstName} ${
         employeeDetails.lastName
@@ -57,20 +58,9 @@ const EmployeeForm = ({ formParams }: Params) => {
 
   if (formParams.crudMethod == "PUT") {
     useEffect(() => {
-      fetch(`http://localhost:8080/${formParams.fetchUrl}`)
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw response;
-        })
-        .then((data) => {
-          setData(data);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          setError(error);
-        })
+      getEmployees(formParams.fetchUrl)
+        .then((data) => setData(data))
+        .catch((error) => setError(error))
         .finally(() => setIsLoading(false));
     }, []);
 

@@ -8,14 +8,6 @@ export const getEmploymentYears = (startDate: Date, endDate: Date) => {
   return Math.abs(Math.round(diff / 365.25));
 };
 
-// Calculate One year from start date - for on-going employees)
-export const onGoingOneYr = (startDate: any) => {
-  let start = new Date(startDate);
-  let oneYearFromDate = start.setFullYear(start.getFullYear() + 1);
-  let convertedDate = new Date(oneYearFromDate);
-  return convertedDate.toISOString().split("T")[0];
-};
-
 export const confirmBeforeExecution = (
   message: string,
   ifOk: string,

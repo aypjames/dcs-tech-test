@@ -1,5 +1,5 @@
 import styles from "./App.module.scss";
-import AllEmployeesPage from "./containers/allEmployeesPage/AllEmployeesPage";
+import AllEmployeesPage from "./containers/AllEmployeesPage/AllEmployeesPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NewEmployeePage from "./containers/NewEmployeePage/NewEmployeePage";
 import EditEmployeePage from "./containers/EditEmployeePage/EditEmployeePage";

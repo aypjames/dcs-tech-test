@@ -52,8 +52,9 @@ public class EmployeeService {
 	public Employee updateEmployee (Long id, EmployeeDTO data) {
 		Optional<Employee> employeeToUpdate = this.getById(id);
 		
+		// PUT needs to create a record if a record is not found.
 		if(employeeToUpdate.isEmpty()) {
-			return null;
+			return this.create(data);
 		}
 		
 		Employee existingEmployee = employeeToUpdate.get();

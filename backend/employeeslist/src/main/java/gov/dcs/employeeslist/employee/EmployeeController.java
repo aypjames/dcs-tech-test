@@ -22,24 +22,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/employees")
+@CrossOrigin
 public class EmployeeController {
 	
 	Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 	
-	
-	// Dependency Injection pattern
 	@Autowired
 	private EmployeeService service;
 	
-	@CrossOrigin
 	@GetMapping
 	public ResponseEntity<List<Employee>> getAll() {
 		List<Employee> allEmployees = this.service.getAll();
+		
 		logger.info("Generated all employees");
 		return new ResponseEntity<>(allEmployees, HttpStatus.OK);
 	}
 	
-	@CrossOrigin
 	@GetMapping("/{id}")
 	public ResponseEntity<Employee> getById(@PathVariable Long id) {
 		Optional<Employee> isEmployee = this.service.getById(id);
@@ -47,38 +45,33 @@ public class EmployeeController {
 		if(isEmployee.isEmpty()) {
 			logger.error("Failed to find employee");
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-
 		}
+		
 		logger.info("Found employee");
 		return new ResponseEntity<>(isEmployee.get(), HttpStatus.OK); 
 	}
 	
-	
-	@CrossOrigin
 	@PostMapping
 	public ResponseEntity<Employee> create(@Valid @RequestBody EmployeeDTO data) {
 		Employee createdEmployee = this.service.create(data);
+		
 		logger.info("Successfully created employee");
 		return new ResponseEntity<>(createdEmployee, HttpStatus.CREATED);
-
 	}
 	
 	
-	@CrossOrigin
 	@PutMapping("/{id}")
 	public ResponseEntity<Employee> updateEmployee(@Valid @PathVariable Long id, @RequestBody EmployeeDTO data) {
 		Employee updatedEmployee = this.service.updateEmployee(id, data);
 		
-		if (updatedEmployee == null) {
-			logger.error("Failed to find employee");
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-		}
+		// PUT will always create a record, if the data is valid, it will rewrite or create.
+		// Hence there is no need to have an employee not found check.
+		
 		logger.info("Updated employee");
 		return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
 	}
 	
-	
-	@CrossOrigin
+
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Employee> delete(@PathVariable Long id) {
 		boolean isDeleted = this.service.delete(id);

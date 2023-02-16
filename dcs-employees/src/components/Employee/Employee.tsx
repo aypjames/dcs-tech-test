@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getEmploymentYears } from "../../utilities/utilities";
 import styles from "../Employee/Employee.module.scss";
 
@@ -13,20 +13,11 @@ export interface IEmployeeProps {
     endDate: Date;
     onGoing: boolean;
   };
+  onDelete: any;
 }
 
-const Employee = ({ employeeDetails }: IEmployeeProps) => {
+const Employee = ({ employeeDetails, onDelete }: IEmployeeProps) => {
   const emp = employeeDetails;
-
-  const handleRemove = () => {
-    const confirmationMsg = `Are you sure you want to remove ${emp.firstName} ${emp.lastName} from the employee register?`;
-    if (confirm(confirmationMsg) == true) {
-      fetch(`http://localhost:8080/employees/${emp.id}`, {
-        method: "DELETE",
-      });
-      location.reload();
-    }
-  };
 
   const getEmployeementPeriod = () => {
     if (emp.onGoing) {
@@ -44,7 +35,12 @@ const Employee = ({ employeeDetails }: IEmployeeProps) => {
       </div>
       <div className={styles.Employee_Links}>
         <Link to={`/employees/${emp.id}`}>Edit</Link> |{" "}
-        <a className={styles.Employee_Remove} onClick={handleRemove}>
+        <a
+          className={styles.Employee_Remove}
+          onClick={() => {
+            onDelete(emp.id, emp.firstName, emp.lastName);
+          }}
+        >
           Remove
         </a>
       </div>
