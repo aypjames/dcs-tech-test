@@ -22,6 +22,7 @@ Create an employee register that allows a user to:
 - Before you delete a file, a prompt confirmation is provided to allow for user to cancel the execution (in case of accidental click)
 - The page is reponsive
 - Uses React-Router for routing, React-Hook-Form for form validation.
+- Redirects to default route "/employees" if route does not match.
 - User Experience have been considered in the development of the form component. The date inputs have been consolidated into a single date input (less inputs for the user to complete), and the "on-going" checkbox input toggles between displaying or hidding the end-date input (so as to create less confusion for the user on input requirements).
 
 ## Challenges
