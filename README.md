@@ -1,6 +1,6 @@
 # DCS Employee Register - Tech Test
 
-An employee register for the Department of Customer Service (DCS). This full-stack web application was built using React Typescript (frontend) and Java Spring (backend) and MySQL. BEM methodology was used for SaSS styling, which also made reference to the Digital.NSW website (did you notice the favicon and the color variables??).
+An employee register for the Department of Customer Service (DCS). This full-stack web application was built using React Typescript (frontend) and Java Spring (backend) and MySQL(database). BEM methodology was used for SaSS styling, which also made reference to the Digital.NSW website (did you notice the favicon and the color variables?).
 
 ## ScreenShots
 
@@ -9,19 +9,44 @@ An employee register for the Department of Customer Service (DCS). This full-sta
 
 ## MVP
 
-Create a employee register that allows a user to
+Create an employee register that allows a user to:
 
 - [x] Create an employee
 - [x] Get a list of existing employees that have been generated
 - [x] Update the details of an employee
 - [x] Delete an employee
 
-## Tips to compile and run
+## Features
 
-- clone the repo to your local device
--
+- The styling makes references to Digital.NSW website
+- Before you delete a file, a prompt confirmation is provided to allow for user to cancel the execution (in case of accidental click)
+- The page is reponsive
+- Uses React-Router for routing, React-Hook-Form for form validation.
+- User considerations have been considered in the development of the form. The date inputs have been consolidated into a single date input (less inputs for the user to complete), and the on-going checkbox toggles between displaying or hidding the end-date input (less confusion for the user)
 
-### For Front End.
+## Challenges
+
+- It definitely was a challenge to complete a full-stack app using in such a short-frame, however it has been a rewarding experience to see how much I could pick up (typescript in react, new react libraries, tryingt to implement testing) and what I could create in that time.
+- I was struggling with the implementation of tests - This is still a work in progress!
+
+## Things to Improve
+
+- Input for dates could be separated as per the MVP. Three separate inputs (number, option, number), gather values as dd-mm-yyyy and use the setValue for endDate to return the value to the backend.
+- Could use google maps api to suggest address for the street address input.
+- More validation can be completed, example, checking if end date < start date or any other business specific requirements.
+
+## Reflection/Learning
+
+- I have so much more appreciation for React in Javascript, but can appreciate the benefits of picking up bugs and errors early in using React Typescript.
+- I had found Java to be challenging, so this was a very good practice to reaffirm my understanding. Definitely plenty to still learn, but I am feeling more confident about my next run at this.
+- Picked up React-Hook-Form, but couldn't figure out React-Query - will probably have a crack at this again for another project.
+- It was fun to look under the hood of the NSW.digital website and recreate styling varibales.
+
+## Pointers on compiling and running the app
+
+Start by cloning the repo to your local device
+
+### For Front End
 
 Once your have cd into the "dsc-employees" folder in your terminal, make sure to install the dependencies
 
@@ -32,7 +57,7 @@ npm install
 Note that the homepage endpoint is '/employess'
 e.g 'http://localhost:5173/employees'
 
-### For Backend - Eclipise.
+### For Backend - Eclipise
 
 Within the "application.properties" file, ensure you have the following (replace the values within "<>"):
 
@@ -52,31 +77,6 @@ spring.jpa.generate-ddl=true
 ```
 Create DATABASE <db_cd name>
 ```
-
-## Features
-
-- The styling makes references to Digital.NSW website
-- Before you delete a file, a prompt confirmation is provided to allow for user to cancel the execution (in case of accidental click)
-- The page is reponsive
-- Uses React-Router for routing, React-Hook-Form for form validation.
-
-## Challenges
-
-- It definitely was a challenge to complete a full-stack app using in such a short-frame, however it has been a rewarding experience to see how much I could pick up (typescript in react, new react libraries, tryingt to implement testing) and what I could create in that time.
-- I struggled a bit with creating tests, If I had more time, I would have focused on getting this running. This will be a focus for the next project.
-
-## Things to Improve
-
-- Input for dates could be separated as per the MVP. Three separate inputs (number, option, number), gather values as dd-mm-yyyy and use the setValue for endDate to return the value to the backend.
-- Could use google maps api to suggest address for the street address input.
-- More validation can be completed, example, checking if end date < start date or any other business specific requirements.
-
-## Reflection/Learning
-
-- I have so much more appreciation for React in Javascript, but can appreciate the benefits of picking up bugs and errors early in using React Typescript.
-- I had found Java to be challenging, so this was a very good practice to reaffirm my understanding. Definitely plenty to still learn, but I am feeling more confident about my next run at this.
-- Picked up React-Hook-Form, but couldn't figure out React-Query - will probably have a crack at this again for another project.
-- It was fun to look under the hood of the NSW.digital website and recreate styling varibales.
 
 ## Useful Resources
 

@@ -1,3 +1,5 @@
+// Currently unsed - but can be used for future instances.
+
 @mixin for-phone-only {
   @media (max-width: 599px) {
     @content;
