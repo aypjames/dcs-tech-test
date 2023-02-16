@@ -69,6 +69,7 @@ const EmployeeForm = ({ formParams }: Params) => {
   }
 
   const isOnGoing = watch("onGoing");
+  const empWorkBasis = watch("workBasis");
 
   if (isOnGoing) {
     setValue("endDate", null);
@@ -150,14 +151,13 @@ const EmployeeForm = ({ formParams }: Params) => {
           defaultValue={data.mobNumber || ""}
           {...register("mobNumber", {
             required: true,
-            valueAsNumber: true,
-            min: 9,
+            maxLength: 9,
+            pattern: /^4\d{8}$/,
           })}
         />
-        {/* pattern: /[4]{1}[0-9]{8}/, */}
         {errors.mobNumber && (
           <small className={styles.Form_Validation}>
-            This field is required
+            Please enter a valid mobile number without 0 at the beginning
           </small>
         )}
       </div>
@@ -218,7 +218,7 @@ const EmployeeForm = ({ formParams }: Params) => {
         />
         {errors.startDate && (
           <small className={styles.Form_Validation}>
-            This field is required
+            This date is required
           </small>
         )}
       </div>
@@ -237,7 +237,7 @@ const EmployeeForm = ({ formParams }: Params) => {
             />
             {errors.endDate && (
               <small className={styles.Form_Validation}>
-                This field is required if not On-going
+                This date is required if not on-going
               </small>
             )}
             {/* CAN HAVE VALIDATION FOR FINISH DATE CANNOT BE LESS THAN STARTING DATE. */}
@@ -292,12 +292,17 @@ const EmployeeForm = ({ formParams }: Params) => {
           {...register("hrsPerWeek", {
             required: true,
             min: 1,
-            valueAsNumber: true,
+            max: empWorkBasis == "Part-time" ? 37 : 56,
           })}
         />
+        {/* Max for full-time calculated using 8hrs * 7 days (for "reasonable" additional hours)*/}
         {errors.hrsPerWeek && (
           <small className={styles.Form_Validation}>
-            Your hours need to be greater than 0
+            {`Please enter valid hours between ${
+              empWorkBasis == "Part-time"
+                ? "1 and less than 38 hours (part-time"
+                : "1 and 38 hours (full-time)"
+            }`}
           </small>
         )}
       </div>
