@@ -54,12 +54,12 @@ I have implemented some simple testing for the rendering and user interactions o
 
 ## Reflection/Learning
 
-- I have so much more appreciation for React in Javascript, but can appreciate the benefits of picking up bugs and errors early in using React Typescript.
+- I have now have so much more appreciation for React in Javascript, but I can understand the benefits of picking up bugs and errors early through React Typescript.
 - I had found Java to be challenging, so this was a very good practice to reaffirm my understanding. Definitely plenty to still learn, but I am feeling more confident about my next run at this.
 - Picked up React-Hook-Form, but couldn't figure out React-Query - will probably have a crack at this again for another project.
 - It was fun to look under the hood of the NSW.digital website and recreate styling varibales.
 
-## Pointers on compiling and running the app
+## Compiling and running the app
 
 Start by cloning the repo to your local device
 
@@ -109,8 +109,8 @@ mysql.server start
 ### For Backend - Eclipise
 
 1. Open Eclipise and import the file within "backend"
-- File > Import > Maven > Existing Maven Projects > Browse for the "employeeslist" folder
-- Tip: the folder level you open should contain the pom.xml file.
+  - File > Import > Maven > Existing Maven Projects > Browse for the "employeeslist" folder
+  - Tip: the folder level you open should contain the pom.xml file.
 
 2. Once you have the project open, within the "application.properties" file, ensure you have the following (replace the values within "<>"):
 
@@ -124,8 +124,8 @@ spring.jpa.generate-ddl=true
 ```
 
 3. You are now ready to Run the app. Make sure to run the program from 'gov.dcs.employeeslist' class. This will activate the backend.
-- Select gov.dcs.employeeslist (employeeslist/src/main/java/gov.dcs.employeeslist)
-- You can Run the app by pressing the green play button or right clicking on gov.dcs.employeeslist and selecting > Run As > Java Application
+  - Select gov.dcs.employeeslist (employeeslist/src/main/java/gov.dcs.employeeslist)
+  - You can Run the app by pressing the green play button or right clicking on gov.dcs.employeeslist and selecting > Run As > Java Application
 
 
 ## Useful Resources
