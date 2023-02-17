@@ -2,10 +2,14 @@
 
 An employee register for the Department of Customer Service (DCS). This full-stack web application was built using React Typescript (frontend) and Java Spring (backend) and MySQL(database). BEM methodology was used for SaSS styling, which also made reference to the Digital.NSW website (did you notice the favicon and the color variables?).
 
+
+
 ## ScreenShots
 
 ![Screenshot of Employee Lists Page](./dcs-employees/src/assets/READMEImages/app_screenshot_1.png)
 ![Screenshot of Edit/Create Form](./dcs-employees/src/assets/READMEImages/app_screenshot_2.png)
+
+
 
 ## MVP
 
@@ -16,6 +20,8 @@ Create an employee register that allows a user to:
 - [x] Update the details of an employee
 - [x] Delete an employee
 
+
+
 ## Features
 
 - The styling makes references to Digital.NSW website
@@ -24,10 +30,13 @@ Create an employee register that allows a user to:
 - Redirects to default route "/employees" if route does not match.
 - User Experience have been considered in the development of the form component. The date inputs have been consolidated into a single date input (less inputs for the user to complete), and the "on-going" checkbox input toggles between displaying or hidding the end-date input (so as to create less confusion for the user on input requirements).
 
+
+
 ## Challenges
 
 - It definitely was a challenge to complete a full-stack app using in such a short-frame, however it has been a rewarding experience to see how much I could pick up (typescript in react, new react libraries, tryingt to implement testing) and what I could create in that time.
 - I was struggling with the implementation of tests - NOTE: This is NOT COMPLETE and is still a work in progress!
+
 
 ### Testing
 
@@ -45,6 +54,9 @@ I have implemented some simple testing for the rendering and user interactions o
 - toggling the ongoing button to false should display the endDate input and it should be blank
 - clicking part-time or full-time should change the maxValue input for Weekly hours.
 
+
+
+
 ## Things to Improve
 
 - Input for dates could be separated as per the MVP. Three separate inputs (number, option, number), gather values as dd-mm-yyyy and use the setValue for endDate to return the value to the backend.
@@ -52,12 +64,16 @@ I have implemented some simple testing for the rendering and user interactions o
 - number of hours input could take in decimal values instead of whole numbers.
 - More validation can be completed, e.g. checking if end date < start date or any other business specific requirements.
 
+
+
+
 ## Reflection/Learning
 
 - I have now have so much more appreciation for React in Javascript, but I can understand the benefits of picking up bugs and errors early through React Typescript.
 - I had found Java to be challenging, so this was a very good practice to reaffirm my understanding. Definitely plenty to still learn, but I am feeling more confident about my next run at this.
 - Picked up React-Hook-Form, but couldn't figure out React-Query - will probably have a crack at this again for another project.
 - It was fun to look under the hood of the NSW.digital website and recreate styling varibales.
+
 
 ## Compiling and running the app
 
@@ -81,7 +97,6 @@ You can run the tests on react using the following command in Terminal
 ```
 npm run test
 ```
-
 
 ### For DB - MySqlWorkbech
 
@@ -126,6 +141,7 @@ spring.jpa.generate-ddl=true
 3. You are now ready to Run the app. Make sure to run the program from 'gov.dcs.employeeslist' class. This will activate the backend.
   - Select gov.dcs.employeeslist (employeeslist/src/main/java/gov.dcs.employeeslist)
   - You can Run the app by pressing the green play button or right clicking on gov.dcs.employeeslist and selecting > Run As > Java Application
+
 
 
 ## Useful Resources
