@@ -3,9 +3,6 @@
 An employee register for the Department of Customer Service (DCS). This full-stack web application was built using React Typescript (frontend) and Java Spring (backend) and MySQL(database). BEM methodology was used for SaSS styling, which also made reference to the Digital.NSW website (did you notice the favicon and the color variables?).
 
 
-
-## ScreenShots
-
 ![Screenshot of Employee Lists Page](./dcs-employees/src/assets/READMEImages/app_screenshot_1.png)
 ![Screenshot of Edit/Create Form](./dcs-employees/src/assets/READMEImages/app_screenshot_2.png)
 
@@ -45,7 +42,7 @@ I have implemented some simple testing for the rendering and user interactions o
 
 - Should contain x number of inputs
 
-#### Testing User Interaction
+#### Testing user interaction
 
 - clicking save with no values, should show display validation texts
 - clicking cancel should go back to employees' list page
@@ -56,7 +53,7 @@ I have implemented some simple testing for the rendering and user interactions o
 
 
 
-## Things to Improve
+## Things to improve
 
 - Input for dates could be separated as per the MVP. Three separate inputs (number, option, number), gather values as dd-mm-yyyy and use the setValue for endDate to return the value to the backend.
 - Could use google maps api to suggest address for the street address input.
@@ -78,7 +75,7 @@ I have implemented some simple testing for the rendering and user interactions o
 
 Start by cloning the repo to your local device
 
-### For Front End
+### For frontend
 
 Once your have changed directories into the "dsc-employees" folder in your Terminal, make sure to install the dependencies before running the app.
 
@@ -97,7 +94,7 @@ You can run the tests on react using the following command in Terminal
 npm run test
 ```
 
-### For DB - MySqlWorkbech
+### For Database (DB) - MySqlWorkbech
 
 Create a DB to store your data by writing the following: 
 Note: Make sure to have the name match the file name in the "application.properties" in Eclipise (see For Backend - Eclipise)
@@ -143,7 +140,7 @@ spring.jpa.generate-ddl=true
 
 
 
-## Useful Resources
+## Useful resources
 
 - [React + Fetch: GET, POST, PUT, DELETE](https://jasonwatmore.com/post/2020/01/27/react-fetch-http-get-request-examples)
 - [Passing Object as props to a component in React Typescript](https://bobbyhadz.com/blog/react-typescript-pass-object-as-props)
@@ -159,4 +156,3 @@ spring.jpa.generate-ddl=true
 
 - [LinkedIn](https://au.linkedin.com/in/ayushjames)
 - [Email](mailto:ayushpjames@gmail.com)
-- [Portfolio]()
