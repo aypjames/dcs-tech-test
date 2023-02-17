@@ -55,6 +55,7 @@ I have implemented some simple testing for the rendering and user interactions o
 
 ## Things to improve
 
+- I would first speak with a user of the product or a PM to find out the extact (business) requirements of the application. 
 - Input for dates could be separated as per the MVP. Three separate inputs (number, option, number), gather values as dd-mm-yyyy and use the setValue for endDate to return the value to the backend.
 - Could use google maps api to suggest address for the street address input.
 - number of hours input could take in decimal values instead of whole numbers.
