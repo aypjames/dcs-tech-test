@@ -90,7 +90,6 @@ Note: Make sure to have the name match the file name in the "application.propert
 
 ```
 CREATE DATABASE <YOUR_MYSQL_DB_NAME>
-
 ```
 
 Later, you can also use the following to view the data that is saved into the DB.
