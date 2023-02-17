@@ -65,40 +65,35 @@ Start by cloning the repo to your local device
 
 ### For Front End
 
-Once your have cd into the "dsc-employees" folder in your terminal, make sure to install the dependencies
+Once your have changed directories into the "dsc-employees" folder in your Terminal, make sure to install the dependencies before running the app.
 
 ```
+cd dsc-employees
 npm install
+npm run dev
 ```
 
-Note that the homepage endpoint is '/employess'
-e.g 'http://localhost:5173/employees'
+Note that the homepage endpoint is '/employees'
+e.g 'http://localhost:5173/employees' however, page routing will automatically link you to this page. 
 
-### For Backend - Eclipise
-
-Within the "application.properties" file, ensure you have the following (replace the values within "<>"):
-
+You can close the server with Control + C on Mac. 
+You can run the tests on react using the following command in Terminal
 ```
-spring.datasource.url=jdbc:mysql://localhost:3306/<YOUR_MYSQL_DB_NAME>
-spring.datasource.username=root
-spring.datasource.password=<YOUR_PASSWORD_OR_REMOVE_IF_NO_PASSWORD>
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-spring.jpa.generate-ddl=true
+npm run test
 ```
 
-Make sure to the 'gov.dcs.employeeslist' file. This will activate the backend.
 
 ### For DB - MySqlWorkbech
 
-Make sure to to have the name match the file name in the "application.properties"
+Create a DB to store your data by writing the following: 
+Note: Make sure to have the name match the file name in the "application.properties" in Eclipise (see For Backend - Eclipise)
 
 ```
 CREATE DATABASE <YOUR_MYSQL_DB_NAME>
 
 ```
 
-You can also use the following to view the data that is saved into the DB.
+Later, you can also use the following to view the data that is saved into the DB.
 
 ```
 USE dcs_employees;
@@ -111,6 +106,28 @@ If you are having errors running mySqlWorkbench try the following to start the s
 ```
 mysql.server start
 ```
+
+### For Backend - Eclipise
+
+1. Open Eclipise and import the file within "backend"
+- File > Import > Maven > Existing Maven Projects > Browse for the "employeeslist" folder
+- Tip: the folder level you open should contain the pom.xml file.
+
+2. Once you have the project open, within the "application.properties" file, ensure you have the following (replace the values within "<>"):
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/<YOUR_MYSQL_DB_NAME>
+spring.datasource.username=root
+spring.datasource.password=<YOUR_PASSWORD_OR_REMOVE_IF_NO_PASSWORD>
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.generate-ddl=true
+```
+
+3. You are now ready to Run the app. Make sure to run the program from 'gov.dcs.employeeslist' class. This will activate the backend.
+- Select gov.dcs.employeeslist (employeeslist/src/main/java/gov.dcs.employeeslist)
+- You can Run the app by pressing the green play button or right clicking on gov.dcs.employeeslist and selecting > Run As > Java Application
+
 
 ## Useful Resources
 
