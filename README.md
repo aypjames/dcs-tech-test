@@ -98,7 +98,7 @@ npm run test
 ### For Database (DB) - MySqlWorkbech
 
 Create a DB to store your data by writing the following: 
-Note: Make sure to have the name match the file name in the "application.properties" in Eclipise (see For Backend - Eclipise)
+Note: Make sure to have the name match the file name in the "application.properties" in Eclipise see [For Backend - Eclipise](### For Backend - Eclipse)
 
 ```
 CREATE DATABASE <YOUR_MYSQL_DB_NAME>
