@@ -76,7 +76,7 @@ I have implemented some simple testing for the rendering and user interactions o
 
 Start by cloning the repo to your local device
 
-### For frontend
+### For Frontend
 
 Once your have changed directories into the "dsc-employees" folder in your Terminal, make sure to install the dependencies before running the app.
 
