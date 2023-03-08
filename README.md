@@ -1,6 +1,6 @@
 # DCS Employee Register - Tech Test
 
-An employee register for the Department of Customer Service (DCS). This full-stack web application was built using React Typescript (frontend) and Java Spring (backend) and MySQL(database). BEM methodology was used for SaSS styling, which also made reference to the Digital.NSW website (did you notice the favicon and the color variables?).
+An employee register for the Department of Customer Service (DCS). This full-stack web application was built using React Typescript (frontend) and Java Spring (backend) and MySQL(database). BEM methodology was used for Sass styling, which also made reference to the Digital.NSW website (did you notice the favicon and the color variables?).
 
 
 ![Screenshot of Employee Lists Page](./dcs-employees/src/assets/READMEImages/app_screenshot_1.png)
